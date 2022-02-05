@@ -23,11 +23,11 @@ MealDetailsScreen.navigationOptions = (navigationData) => {
     const seltitle = MEALS.find(meal => meal.id === mid);
     return {
         headerTitle: seltitle.title,
-        headerRight: <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+        headerRight: () => { return <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
             <Item title='Fav' iconName='ios-star-outline' onPress={()=>{
                 console.log('Mark as Fav!');
             }}/>
-        </HeaderButtons> 
+        </HeaderButtons>;  }
     };
 };
 
